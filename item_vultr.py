@@ -1,7 +1,7 @@
-from crawler import element_header, element_body, element_memory
+from crawler import crawler_vultr
 import json, csv
 
-
+element_header, element_body, element_memory = crawler_vultr()
 instances = {}
 num = 0
 fieldnames = []
