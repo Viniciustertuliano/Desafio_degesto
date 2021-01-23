@@ -1,7 +1,5 @@
 from crawler import crawler_ocean
-import json
-import csv
-import re
+import json, csv
 
 instances = {}
 num = 0
@@ -33,29 +31,22 @@ def organiza_element(num, element_header, element_body):
         num += 1
         instances[num] = {}
         for i in element_header:
-            print(element_body)
             if i == 'Memory':
                 instances[num][i] = element_body[0]
                 element_body.pop(0)
-                print(element_body)
             elif i == 'vCPUs':
                 instances[num][i] = element_body[0]
                 element_body.pop(0)
-                print(element_body)
             elif i == 'Transfer':
                 instances[num][i] = element_body[0]
                 element_body.pop(0)
-                print(element_body)
             elif i == 'SSD Disk':
                 instances[num][i] = element_body[0]
                 element_body.pop(0)
-                print(element_body)
                 element_body.pop(0)
-                print(element_body)
-            if i == '$/MO':
+            elif i == '$/MO':
                 instances[num][i] = element_body[0]
                 element_body.pop(0)
-                print(element_body)
     return instances
 
 
